@@ -1,0 +1,13 @@
+<div class="solicitudesAmistad">
+    <h2>Solicitudes de amistad</h2>
+    <ul class="listadoAmigos">
+        <% solicitudes.forEach((solicitud)=>{ %>
+        <li>
+            <a href="/amigos/perfil/<%= solicitud.id %>" class="fotoPeticion"><img class="pequeImg" src="/usuario/imagen/<%= solicitud.id %>"></a>
+            <p><%= solicitud.nombre %></p>
+            <a href="/amigos/aceptar/<%= solicitud.id %>" class="aceptar">Aceptar</a>
+            <a href="/amigos/rechazar/<%= solicitud.id %>" class="rechazar">Rechazar</a>
+        </li>
+        <% }) %>
+    </ul>
+</div>

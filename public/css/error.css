@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    height: 100%;
+    color:black;
+    background-image: url("/imagen/NoSignal.gif");
+}
+
+html{
+    height: 100%;
+    background: linear-gradient(to top right,rgba(0, 255, 0, 0.733),rgba(255, 255, 0, 0.637));
+    background: url("/imagen/fondo.png") no-repeat center center fixed;
+    
+    background-size: cover;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(223, 18, 18, 0.774), rgba(36, 23, 206, 0.76));
+     text-align: center;
+    top:0;
+    left: 0;
+    z-index: 100;
+}
+h1 img{
+    width: 1em;
+    height: 1em;
+}
+header h1{
+    font-size: 5em;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-family: 'Permanent Marker';
+}
+.content{
+    
+    width: 65%;
+    border:1px solid blue;
+    background-color: darkcyan;
+    text-align: center;
+    margin-top: 10em;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+    width: 100%;
+    height: 30%;
+}
+.frases{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+  
+.frases h2{
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: lightskyblue;
+    padding: 0.75em;
+    width: 80%;
+
+}
+.inicio{
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+}
+.inicio p{
+    margin-left: auto;
+}
+.boton{
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    padding-left: 2em;
+    width: 15%;
+    padding-right: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    border:1px solid black;
+    background: linear-gradient(to right, rgba(223, 18, 18, 0.774), rgba(36, 23, 206, 0.76));
+    text-decoration: none;
+    color:white;
+}

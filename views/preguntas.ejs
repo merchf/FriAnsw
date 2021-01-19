@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="../css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Lista de preguntas</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal2">
+        <div class="preguntas">
+            <h1>Preguntas seleccionadas aleatoriamente</h1>
+            <ul>
+                <% preguntas.forEach((v)=>{%>
+                <li>
+                    <a href="/pregunta/opciones/<%=v.id%>"><%=v.pregunta%></a>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="crearPregunta">
+            <h1>¡Añade tus preguntas!</h1>
+            <div class="divBoton">
+                <a class="boton" href="/pregunta/crearPregunta">Crear nueva pregunta</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

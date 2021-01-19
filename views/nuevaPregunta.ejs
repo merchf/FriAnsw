@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Nueva Pregunta</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal">
+        <form method="POST" action="/pregunta/crearPregunta">
+            <div>
+                <label for="pregunta">
+                    <h2>¿Cuál es tu pregunta?</h2>
+                </label>
+                <input id="pregunta" name="pregunta" type="text" minlength="5" maxlength="100" required placeholder="Escriba la pregunta">
+            </div>
+            <div class="divBoton">
+                <input type="submit" value="Crear">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

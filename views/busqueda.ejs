@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="../css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Busqueda</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal">
+        <h2>Mostrando resultados para <%= buscar %></h2>
+        <% resultado.forEach((v)=>{ %>
+            <div class="busquedaResult">
+                <img class="pequeImg" src="/usuario/imagen/<%= v.id %>">
+                <p><%= v.nombre%></p>
+                <a href="/amigos/enviarSolicitud/<%= v.id %>">Enviar Solicitud</a>
+            </div>
+        <%})%>
+    </div>
+</body>
+
+</html>

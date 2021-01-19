@@ -1,0 +1,31 @@
+<div class="listaAmigos">
+    <h2>Mis amigos</h2>
+    <ul class="listadoAmigos">
+        <% if(amigos){
+            amigos.forEach((amigo)=>{ %>
+        <li>
+            <a href="/amigos/perfil/<%= amigo.usuarioBid %>" class="fotoPeticion"><img class="pequeImg"
+                    src="/usuario/imagen/<%= amigo.usuarioBid %>"></a>
+            <p><%= amigo.nombre %></p>
+            <% if(typeof(amigo.adivinado) !='undefined'){ 
+                    if(amigo.adivinado == null){ %>
+                        <form class="adivinarForm" action="/pregunta/adivinar" method="POST">
+                            <input type="hidden" value="<%= amigo.usuarioBid %>" name="quien">
+                            <input type="hidden" value="<%= pregunta %>" name="question">
+                            <input type="submit" class="boton" value="ADIVINAR">
+                        </form>
+                    <% }else{ 
+                        if(amigo.adivinado){%>
+                            <h3 class="verde">HAS ACERTADO</h3>
+                    <%}else{%>
+                        <h3 class="rojo">HAS FALLADO</h3>
+                    <%}
+                    }
+                } %>
+
+        </li>
+        <% }) 
+        }%>
+
+    </ul>
+</div>

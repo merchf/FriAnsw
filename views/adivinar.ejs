@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Adivinar</title>
+</head>
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal2">
+        <%if(contestado){%>
+            <h2><%=pregunta%></h2>
+            <h2>¿Qué habrá respondido <%=quien%>?</h2>
+            <form method="POST" action="/pregunta/adivinar/<%=preguntaId%>" class="respuestas">
+                <input type="hidden" value="<%=amigo%>" name="amigo">
+                <%opciones.forEach((opcion)=>{%>
+                    <div class="respuesta">
+                        <input checked type="radio" name="respuesta" value="<%=opcion.idOpcion%>" id="resp_<%=opcion.id%>">
+                        <label for="resp_<%=opcion.idOpcion%>"><%=opcion.textoOpcion%></label>
+                    </div>
+                <%})%>
+                <div class="divBoton">
+                    <input type="submit" value="ADIVINAR">
+                </div>
+            </form>
+        <%}else{%>
+            <h3 class="rojo">Esta persona todavia no ha contestado</h3>
+        <%}%>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="../css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Modificar</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal">
+        <h1>Modificar datos</h1>
+        <form action="../usuario/modificarPerfil" method="POST" enctype="multipart/form-data">
+            <div class="form_texto">
+                <label for="txt_email">Email:</label>
+                <input type="email" name="email" id="txt_email" value="<%= user.email %>">
+            </div>
+            <div class="form_texto">
+                <label for="txt_password">Contraseña:</label>
+                <input type="password" name="password" id="txt_password">
+            </div>
+            <div class="form_texto">
+                <label for="txt_name">Nombre completo:</label>
+                <input type="text" name="name" id="txt_name" value="<%= user.nombre %>">
+            </div>
+            <div class="form_texto">
+                <label>Sexo:</label>
+                <% if(user.sexo == "hombre"){%>
+                <input type="radio" name="sexo" value="hombre" checked> Hombre
+                <input type="radio" name="sexo" value="mujer"> Mujer
+                <%}else{%>
+                <input type="radio" name="sexo" value="hombre"> Hombre
+                <input type="radio" name="sexo" value="mujer" checked> Mujer
+                <%};%>
+
+            </div>
+            <div class="form_texto">
+                <label for="date_calendar">Fecha de nacimiento:</label>
+                <input type="date" name="fecha_nacimiento" id="date_calendar">
+            </div>
+            <div class="form_texto">
+                <label>Imagen de perfil:</label>
+                <input type="file" accept="image/png, image/jpeg" name="img_perfil" id="file_input">
+            </div>
+            <input type="hidden" name="id" value="<%=user.id%>">
+            <div class="divBoton">
+                <input type="submit" class="boton" value="Modificar">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

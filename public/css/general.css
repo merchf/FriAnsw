@@ -1,0 +1,391 @@
+*{
+    margin:0;
+    padding: 0;
+    /*border:1px solid red;*/
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 2em;
+    margin-top:auto;
+    height: 4em;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:visited{
+    color:black;
+}
+
+nav a{
+    margin-left: 1em;
+    /*text-decoration: none;*/
+    color:white;
+    font-size: 1.7em;
+    margin-top:auto;
+}
+
+nav p{
+    margin-left: 1em;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+nav a:visited{
+    color:white;
+}
+
+
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(223, 18, 18, 0.774), rgba(36, 23, 206, 0.76));
+    text-align: center;
+    top:0;
+    left: 0;
+    z-index: 100;
+}
+
+header h1{
+    margin-top:auto;
+    margin-bottom: auto;
+    font-family: 'Permanent Marker';
+}
+
+html{
+    height: 100%;
+    background: linear-gradient(to top right,rgba(0, 255, 0, 0.733),rgba(255, 255, 0, 0.637));
+    background: url("/imagen/fondo.png") no-repeat center center fixed;
+    
+    background-size: cover;
+}
+
+body{
+    height: 100%;
+}
+
+.principal,.principal2{
+    margin-top: 9em;
+    height: 100%;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form{
+    border-radius: 3em;
+    background-color: rgba(228, 165, 106, 0.795);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+    border: 1px black solid;
+}
+
+form > *{
+    margin-top:0.5em;
+}
+
+
+.form_texto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form_texto label{
+    flex-grow: 1;
+    margin-right: auto;
+}
+
+.form_texto input{
+    flex-grow: 4;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+.boton{
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border:1px solid black;
+    background: linear-gradient(to right, rgba(223, 18, 18, 0.774), rgba(36, 23, 206, 0.76));
+    text-decoration: none;
+    color:white;
+}
+
+.boton:visited{
+    color:white;
+}
+
+.divBoton{
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.datos{
+    margin-top: 9em;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    justify-content: center;
+}
+
+
+
+.datos img{
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+}
+
+.pequeImg{
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+}
+
+.preguntas li{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: cadetblue;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    list-style-type: none;
+    font-family: 'Indie Flower';
+    font-size: 1.5em;
+}
+
+.respuestas{
+    display: flex;
+    flex-direction: column;
+}
+
+.respuesta{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-color: rgba(45, 126, 45, 0.541);
+    border: 2px yellow double;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.principal h2{
+    margin-bottom: 0.5em;
+}
+
+.principal p{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.principal a{
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+    border-radius: 15%;
+    border: 1px solid black;
+    background-color: tomato;
+    height: 1.5em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#foto{
+    border-radius: 50%;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.listadoAmigos{
+    display:flex;
+    flex-direction: column;
+}
+.listadoAmigos li{
+    display: flex; 
+    flex-direction: row;
+    margin-top: 0.5em;
+    border-bottom: 3px dotted gray;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.listadoAmigos li img{
+    margin-right: 0.5em;
+    height: 4em;
+    width: 4em;
+}
+.aceptar{
+    margin-left: auto;
+    margin-right: 0.5em;
+}
+.solicitar,.adivinar,.acertado,.fallado{
+    margin-left: auto;
+}
+
+.acertado{
+    font-size: 1.5em;
+    color: green;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.fallado{
+    font-size: 1.5em;
+    color: red;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.busqueda{
+    margin-top: 1em;
+}
+.listaAmigos{
+    margin-top:1em;
+}
+
+
+.form_texto a{
+    flex-grow: 1;
+}
+
+.score{
+    
+    margin-left: auto;
+    margin-right: 3em;
+    display: flex;
+}
+
+.score img{
+    width: 5em;
+    height: 4em;
+}
+
+.contestarPreguntas{
+    display: flex;
+    flex-direction: column;
+}
+
+.fotoPeticion{
+    text-decoration: none !important;
+    color: white !important;
+    border-radius: 15% !important;
+    height: 4em !important;
+    width: 4em !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important; 
+}
+
+.busquedaResult{
+    display:flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content:center;
+    background-color: rgba(153, 201, 66, 0.699);
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    flex-wrap: wrap;
+}
+
+.busquedaResult > *{
+    margin-left:2em;
+    margin-right: auto;
+    
+}
+
+.listadoAmigos li > *{
+    margin-left:2em;
+    margin-right: auto;
+}
+
+.verde{
+    color:green;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.rojo{
+    color:red;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.adivinarForm{
+    background:none;
+    border:none;
+}
+
+.publicacionForm{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.centrado{
+    text-align: center;
+    margin-top:2em;
+}
+
+.publicaciones{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgPublicacion{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5;
+    width: 15em;
+    height: 15em;
+}
+.mensajes{
+    display:flex;
+    flex-direction: column;
+}
+.mensajes li{
+    display: flex; 
+    flex-direction: row;
+    margin-top: 0.5em;
+    border-bottom: 3px dotted gray;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mensajes li img{
+    margin-right: 0.5em;
+    height: 4em;
+    width: 4em;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Error del servidor</title>
+    <link rel="stylesheet" type="text/css" href="/css/error.css" media="screen">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <meta charset="UTF-16">
+    <title>Error 500</title>
+</head>
+
+<body>
+    <header>
+        <h1>Upsss 500 - Error interno del servidor</h1>
+    </header>
+    <div class="content">
+
+        <div class="inicio">
+            <p>Lo sentimos, la petición no puede ser completada, inténtelo de nuevo.</p>
+            <a class="boton" href="/usuario/perfil">Inicio</a>
+        </div>
+        <p>Se ha producido el siguiente error: <%= mensaje %></p>
+        <%if (typeof(pila) != "undefined"){%>
+            <p>Pila de ejecución:</p>
+        
+            <pre><%= pila %></pre>
+        <%}%>
+        
+
+    </div>
+</body>
+
+</html>

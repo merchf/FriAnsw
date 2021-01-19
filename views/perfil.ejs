@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Perfil</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:id,puntos:puntos}) %>
+    <div class="datos">
+        <%- include("infoPerfil") %>
+        <% if(propio){%>
+        <div class="divBoton">
+            <a class="boton" id="Modificar" href="../usuario/modificarForm">Modificar perfil</a>
+        </div>
+    
+        <%}%>
+    </div>
+    </div>
+    <% if(propio){%>
+        <div>
+            <form class="publicacionForm" method="POST" action="/usuario/publicar" enctype="multipart/form-data">
+                <div class="form_texto">
+                    <label>Imagen de perfil:</label>
+                    <input type="file" accept="image/png, image/jpeg" name="publicar" required>
+                </div>
+                <textarea name="descripcion" placeholder="Escribe una breve descripcion" maxlength="200" minlength="5"
+                    rows="5" cols="50" required></textarea>
+                <div class="divBoton">
+                    <input class="boton" type="submit" value="PUBLICAR">
+                </div>
+            </form>
+        </div>
+        <%}%>
+    <%if(publicaciones){%>
+        <%- include("publicaciones",{publicaciones:publicaciones}) %>
+    <%}%>
+</body>
+
+</html>

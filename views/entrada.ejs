@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <h1>FRIANSW?</h1>
+        <nav>
+            <a href="/entrada">Entrar</a>
+            <a href="/registro">Nuevo usuario</a>
+        </nav>
+    </header>
+    <div class="principal">
+        <h1>Iniciar Sesión</h1>
+        <form action="/usuario/login" method="POST" enctype="multipart/form-data">
+            <div class="form_texto">
+                <label for="txt_email">Email:</label>
+                <input type="email" name="email" id="txt_email" required>
+                <%if(errores){
+                    if(errores.email){%>
+                        <span class="rojo"><%= errores.email.msg %></span>
+                    <%}
+                }%>
+            </div>
+            <div class="form_texto">
+                <label for="txt_password">Contraseña:</label>
+                <input type="password" name="password" id="txt_password" required>
+                <%if(errores){ 
+                    if(errores.password){%>
+                        <span class="rojo"><%= errores.password %></span>
+                    <%}
+                }%>
+            </div>
+            <div class="divBoton">
+                <input type="submit" value="Entrar">
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

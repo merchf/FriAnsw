@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="../css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Amigos</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal">
+        <%- include("solicitudes",{solicitudes:solicitudes}) %>
+        <div class="busqueda">
+            <h2>Búsqueda de amigos</h2>
+            <form method="POST" action="/amigos/buscar" class="form_texto">
+                <label for="txt_busqueda">Buscar un nombre:</label>
+                <input type="text" name="buscar" id="txt_busqueda">
+                <input type="submit" class="buscar" value="Buscar">
+            </form>
+        </div>
+        <%- include("listaAmigos",{amigos:amigos}) %>
+    </div>
+    
+</body>
+
+</html>

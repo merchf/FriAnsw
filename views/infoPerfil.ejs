@@ -1,0 +1,8 @@
+<%if(user.imagen){%>
+<img src="/usuario/imagen/<%= user.id %>">
+<%}%>
+        <div class="datos_texto">
+            <h2 id="nombre"><%= user.nombre %></h2>
+<p id="edad"><%= user.fecha_nac %></p>
+<p id="sexo"><%= user.sexo %></p>
+<p id="puntos">Puntos: <%= user.puntos %></p>

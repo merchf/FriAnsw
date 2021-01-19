@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Opciones</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal2">
+            <% if(opciones){%>
+        <h1><%=opciones.text%></h1>
+        
+        <form method="POST" action="/pregunta/responder/<%=opciones.id%>" class="respuestas">
+            <% opciones.options.forEach((opcion)=>{%>
+                
+            <div class="respuesta">
+                <input type="radio" name="respuesta" value="<%=opcion.id%>" id="resp_<%=opcion.id%>">
+                <label for="resp_<%=opcion.id%>"><%=opcion.text%></label>
+            </div>
+            <%})%>
+            <%}%>
+            
+            <div class="respuesta">
+                <input type="radio" name="respuesta" value="otra" checked>
+                <label for="resp_5">otra</label>
+                <input type="text" minlength="5" maxlength="100" name="respuesta" placeholder="Escribe tu respuesta" id="txt_respuesta">
+            </div>
+            <div class="divBoton">
+                <input type="submit" value="Responder">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

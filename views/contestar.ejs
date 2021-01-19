@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Pregunta</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal">
+        <div class="contestarPreguntas">
+            <%if(!pregunta.contestada){%>
+            <p>No has contestado a esta pregunta.</p>
+            <div class="divBoton">
+                <a href="/pregunta/responder/<%=question%>" class="boton">Contestar pregunta</a>
+            </div>
+            <%}else{%>
+                <h1><%=pregunta.pregunta%></h1>
+                <p>Ya has contestado a esta pregunta: <%=pregunta.textoOpcion%></p>
+            <%}%>
+        </div>
+        <%- include("listaAmigos",{amigos:amigos,pregunta:question}) %>
+
+    </div>
+</body>
+
+</html>

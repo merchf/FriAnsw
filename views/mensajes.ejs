@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-16">
+    <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/imagen/icon.png"/>
+    <title>Mensajes</title>
+</head>
+
+<body>
+    <%- include("cabecera",{user:userId,puntos:puntos}) %>
+    <div class="principal2">
+        <div class="mensajes">
+            <h1>Mensajes recibidos</h1>
+            <ul>
+                <% mensajes.forEach((v)=>{%>
+                <li>
+                    <a href="/amigos/perfil/<%= v.idEmisor %>" class="fotoPeticion"><img class="pequeImg"
+                        src="/usuario/imagen/<%= v.idEmisor %>"></a>
+                     <p><%= v.texto %></p>
+                     <p><%= v.fecha %></p>
+                     <div class="divBoton">
+                        <a class="boton" href="/mensajes/borrarMensaje/<%= v.id %>">Borrar</a>
+                    </div>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="enviarMensajes">
+            <div class="divBoton">
+                <a class="boton" href="/mensajes/enviarMensaje">Enviar mensaje</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
